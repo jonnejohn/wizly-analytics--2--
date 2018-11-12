@@ -1,0 +1,47 @@
+<div class="modal-header">
+    <span>Hierarchy</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <nb-card>
+        <!-- <nb-card-header>
+
+
+
+        </nb-card-header> -->
+        <nb-card-body>
+            <!-- <div class="form-group row clearfix"> -->
+                <!-- <div class="col-md-12">
+                     <label class="control-label" for="inputFirstName">Demo Name</label> 
+                    <div class="input-group input-group-border-only">
+                        <input class="form-control form-control-wizly" id="inputFirstName" placeholder="Enter Name" type="text" [(ngModel)]="projectName">
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-12"> -->
+                <!-- <iframe src="http://VISHAL/QPR2017-1/qprsoftware/portal/images/tree_open_e.gif"></iframe> -->
+                <!-- <iframe   #iframe (load)="onLoad()" src="http://vishal/QPR2017-1/Portal/QPR.Isapi.dll?PGPLUGIN&*putab&SES=null&FMT=p&LAN=en&PLUGIN=PGPLUGIN&HIE=processmaps&OID=0&TPL=processmapshierarchytreeview.tpl&MODELID=655625500;" style="height:100%;width:100%;"></iframe> -->
+                
+            <!-- </div> -->
+
+           
+                <!-- <ul class="heroes">
+                            <li *ngFor="let hero of heirarchyData" (click)="treeClick(hero)">
+                              <span class="badge">{{hero[3]}}</span> {{hero[1]}}
+                            </li>
+                          </ul> -->
+                          <tree-root [nodes]="nodes"  (activate)=treeClick($event)></tree-root>
+                     
+
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="modal-footer">
+    <!-- <button class="btn btn-sm float-right" (click)="passDataBack()">
+        Create
+    </button>
+    <button class="btn btn-sm float-right" (click)="closeModal()">
+        Cancel
+    </button> -->
+</div>

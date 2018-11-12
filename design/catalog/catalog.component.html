@@ -1,0 +1,185 @@
+<toaster-container [toasterconfig]="toastConfig"></toaster-container>
+<input type="file" id="fileInput" accept='.prjafts' (change)="onFileSelected($event)" style="display:none;" />
+
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>
+        <div class="row">
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <div class="row clearfix">
+              <div class="col-sm-6 margin-bottom">
+                <span class="title">{{baseSession().projectName ? baseSession().projectName : 'No Project Selected'}}</span>
+              </div>
+
+              <div class="col-sm-6 input-group-border-only">
+                <div class="input-group input-group-border-only searchbar">
+                  <input type="text" class="form-control search-text no-radius" placeholder="Search" [(ngModel)]="quickFilterTxt" (ngModelChange)="onFilterChange()">
+                  <span class="input-group-append margin-right">
+                    <button class="btn btn-sm search-label" nbPopover="Search" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-search fa-sm"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="button-container">
+                <div class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width btn-divided-checkbox-group "
+                  data-toggle="buttons">
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" (click)="showRepositories()" nbPopover="Show Repositories" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-th-list fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Back" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-chevron-left fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <label>
+                        0/0
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Next" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-chevron-right fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Add Item" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-plus fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Delete Selected Rows" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-trash fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Save Changes" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-save fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Attribution" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-table fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Export To Excel" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-upload fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Convert to Tree Model" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-tree fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" (click)="sizeToFitColumns(1)" nbPopover="Size To Fit" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-compress fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" (click)="autoSizeColumns(1)" nbPopover="Auto Size" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-expand fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Go to Models" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-object-ungroup fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="size-container margin-center">
+                    <div>
+                      <button class="btn btn-sm" nbPopover="Help" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-question-circle fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+        </div>
+
+      </nb-card-header>
+      <nb-card-body>
+
+        <nb-tabset>
+          <nb-tab tabTitle="Catalog">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 padding-top-10">
+                <div id="div-data" class="input-group input-group-lg input-group-border-only" [style.height.px]="dataHeight">
+                  <ag-grid-angular #agProjects class="ag-theme-blue projects" [gridOptions]="gridOptions" [rowData]="rowData" [columnDefs]="columnDefs"
+                    (rowClicked)="onRowClicked($event)">
+                  </ag-grid-angular>
+                </div>
+              </div>
+
+            </div>
+
+          </nb-tab>
+          <nb-tab tabTitle="Visualization">
+            <span>Content #2</span>
+          </nb-tab>
+        </nb-tabset>
+
+
+
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+
+</div>

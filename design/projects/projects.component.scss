@@ -1,0 +1,92 @@
+@import '../../../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    overflow: visible;
+  }
+
+  .input-group {
+    margin-bottom: 1rem;
+  }
+    .custom-control {
+      margin-left: 1rem;
+    }
+}
+
+  .form-group label {
+    padding: 0 0 0.75rem;
+  }
+
+  .ag-theme-blue.projects{
+    width:100%; 
+    height: 400px;
+  }
+
+  .button-container > .btn-divided-checkbox-group {
+    flex-wrap: wrap;
+
+    > button {
+      flex-basis: 10%;
+      @include nb-ltr(margin, 0 0.25rem 0.5rem 0);
+      @include nb-rtl(margin, 0 0 0.5rem 0.25rem);
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    button:not(.btn-icon) {
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+    }
+  }
+
+
+  .margin-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .margin-right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .float-right {
+    float:right;
+  }
+
+  .title{
+    font-size: 14px;
+  }
+
+  .searchbar{
+    height:24px;
+  }
+
+  .text-center{
+    text-align:center;
+  }
+  
+  .margin-bottom{
+    margin-bottom:6px;
+  }
+
+  .search-text{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .search-text.collapsed{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .no-radius{
+    border-radius: 0 !important;
+  }
+
+  .strong{
+    font-weight: bold;
+  }

@@ -1,0 +1,34 @@
+  <div class="modal-header">
+    <span>View Settings</span>
+   <!-- <button class="close"  (click)="viewload()" aria-label="Close" (click)="closeModal()"> -->
+             <button class="btn btn-sm body" (click)="viewload()" nbPopover="View" nbPopoverMode="hint" nbPopoverPlacement="bottom"> 
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <nb-card>
+        
+        <nb-card-body>
+            
+            <!-- <iframe [src] ="link" style="height:100%;width:100%;"> </iframe> -->
+                     
+             <li class="dropdown">
+                    <a class="account"  href="#"   class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> 
+                        <!-- <button class="btn btn-sm"  (click)="viewload()"nbPopover="View" nbPopoverMode="hint" nbPopoverPlacement="bottom"></button> -->
+                        <!-- <i class="ace-icon fa fa-eye"></i>
+                        <span >View </span> -->
+                    </a>
+                    <ul id="view_id" class="dropdown-menu ace-nav">
+                    </ul>
+                </li>
+
+
+
+
+
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="modal-footer">
+    
+</div>   

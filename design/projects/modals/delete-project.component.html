@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <span>Delete Project</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <nb-card>
+        <nb-card-header>
+
+
+        </nb-card-header>
+        <nb-card-body>
+            <div class="form-group row clearfix">
+                <div class="col-md-12">
+                    <label class="control-label margin-bottom">Are you sure you would like to delete the project '{{projectName}}'?</label>
+                    
+                    <label class="control-label strong">**All the Repositories and Categories under the Project will also be deleted.</label>
+                </div>
+
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm float-right" (click)="passDataBack()">
+        Delete
+    </button>
+
+    <button class="btn btn-sm float-right" (click)="closeModal()">
+        Cancel
+    </button>
+</div>

@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <span>Select Groups</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <nb-card>
+        <nb-card-header>
+
+            <label class="card-header">Select group(s) to publish {{projectName}}</label>
+
+
+        </nb-card-header>
+        <nb-card-body>
+            <div class="form-group row clearfix">
+
+                <div class="col-md-12">
+                    <button class="btn btn-sm float-right" (click)="autoSizeColumns()" nbPopover="Auto Size" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-expand fa-sm"></i>
+                    </button>
+                    <button class="btn btn-sm float-right" (click)="sizeToFitColumns()" nbPopover="Size To Fit" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="fa fa-compress fa-sm"></i>
+                    </button>
+                </div>
+
+                <div class="col-md-12">
+                    <ag-grid-angular #agGridPublish class="ag-theme-blue project-grid" style="width:100%; height: 300px;" [gridOptions]="gridOptionsPublish"
+                        [rowData]="rowData" [columnDefs]="columnDefsPublish">
+                    </ag-grid-angular>
+                </div>
+
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm float-right" (click)="passDataBack()">
+        Select
+    </button>
+
+    <button class="btn btn-sm float-right" (click)="closeModal()">
+        Cancel
+    </button>
+</div>

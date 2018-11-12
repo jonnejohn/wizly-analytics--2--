@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="modal-header">
+            <span>My Preferences</span>
+            <button class="close" aria-label="Close" (click)="closeModal()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <nb-card>
+                <!-- <nb-card-header>
+
+
+
+        </nb-card-header> -->
+                <nb-card-body>
+
+                    <!-- <div class="form-group row clearfix">
+                
+                    <label class="control-label" for="inputFirstName">URL</label>
+                    <div class="input-group input-group-border-only">
+                        <input class="form-control form-control-wizly" id="inputFirstName" placeholder="Enter " type="text" [(ngModel)]="projectName">
+                    </div>
+                
+
+            </div> -->
+
+            <div class="input-group input-group-lg input-group-border-only">
+               
+                <input type="text" class="form-control search-text no-radius" placeholder="Search" [(ngModel)]="marketing"  (ngModelChange)="onFilterChange()" >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                <button class="btn btn-sm search-label" (click)="open1()"nbPopover="Search" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                    <i class="fa fa-search fa-sm"></i>
+               </button>
+            </div>
+
+
+                    <div class="row" style="width:500px">
+                  <div class="col-md-6">
+        <h6> Organization Hierarchy</h6>
+                             <tree-root [nodes]="display" [options]="options" (select)="onSelect($event)" > </tree-root> 
+                             <!-- <ngx-treeview [config]="config"  [items]="itemAttr" (selectedChange)="onSelectedChange($event)">
+                                </ngx-treeview>  -->
+                                <!-- <category-tree-view [treeData]="display"   (selected)="selectCategory($event)" [hasCheckbox]="true"></category-tree-view> -->
+
+                                <!-- <template let-item>
+                                    <span [ngClass]="getCheckBoxClass(item)" (mousedown)="checkItem($event, item)"></span>
+                                    <span [ngClass]="getItemIcon(item)"></span>
+                                    <span class="trw-cbox-item-label">{{item.text}}</span>
+                                </template> -->
+                                
+                            </div>
+
+
+                        <div class="col-md-6"> 
+           <h6>Resource Group Hierarchy</h6>
+  <tree-root [nodes]="nodes" [options]="options"   (select)="onSelecte($event)" (activate)=treeClick($event)>
+
+
+    <!-- <ng-template #treeNodeTemplate let-node="node" let-index="index" >
+        <input
+        (select)="check(node, !node.data.checked)"
+          type="checkbox"
+          [indeterminate]="node.data.indeterminate"
+          [checked]="node.data.checked">
+
+          {{ node.data.name }}
+      </ng-template> -->
+  </tree-root>  
+                            <!-- <ngx-treeview [config]="config" [items]="nodes" (selectedChange)="treeClick($event)" style="max-height:100%;">
+                            </ngx-treeview>  -->
+                           
+                       
+                        </div>
+                    </div>
+
+                    <!-- <input type="checkbox"
+                           name="options"
+                           value="{{option}}"
+                           [checked]="options.indexOf(option) >= 0"
+                           (change)="updateCheckedOptions(option, $event)"/> -->
+<div>
+                    <!-- <button (click)="selectedprefernce()" >OK</button> -->
+                 
+                    <!-- <button class="btn btn-sm"  (click)="selectedprefernce()"  nbPopover="OK" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                        <i class="ace-icon fa fa-eye"></i>
+                       </button>  -->
+                       <button type=button class="btn btn-primary"  (click)="selectedprefernce()">OK</button>
+
+                </div>
+                </nb-card-body>
+
+            </nb-card>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+    </div>
+</div>

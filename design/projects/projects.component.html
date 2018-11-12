@@ -1,0 +1,129 @@
+<toaster-container [toasterconfig]="toastConfig"></toaster-container>
+<input type="file" id="fileInput" accept='.prjafts' (change)="onFileSelected($event)" style="display:none;" />
+
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>
+        <div class="row">
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <div class="row clearfix">
+              <div class="col-sm-6 margin-bottom">
+                <span class="title">{{baseSession().projectName ? baseSession().projectName : 'No Project Selected'}}</span>
+              </div>
+
+            <!--  <div class="col-sm-6 input-group-border-only">
+                <div class="input-group input-group-border-only searchbar">
+                  <input type="text" class="form-control search-text no-radius" placeholder="Search" [(ngModel)]="quickFilterTxt" (ngModelChange)="onFilterChange()">
+                  <span class="input-group-append margin-right">
+                    <button class="btn btn-sm search-label" nbPopover="Search" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-search fa-sm"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>-->
+            </div>
+
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <div class="button-container">
+              <div class="btn-group btn-group-toggle btn-divided-group btn-outline-divided-group btn-group-full-width btn-divided-checkbox-group "
+                data-toggle="buttons">
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="open()" nbPopover="Create New Project" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-plus fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="onRemoveSelected()" nbPopover="Delete Selected Project" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-trash fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="onSaveChanges()" nbPopover="Save Changes" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-save fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="openfileDialog()" nbPopover="Import Project" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-download fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="getDiagram()" nbPopover="Export Project" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-upload fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="sizeToFitColumns(1)" nbPopover="Size To Fit" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-compress fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" (click)="autoSizeColumns(1)" nbPopover="Auto Size" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-expand fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" nbPopover="Go to Catalog" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-th-list fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="size-container margin-center">
+                  <div>
+                    <button class="btn btn-sm" nbPopover="Help" nbPopoverMode="hint" nbPopoverPlacement="bottom">
+                      <i class="fa fa-question-circle fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </nb-card-header>
+      <nb-card-body>
+
+        <div class="input-group input-group-lg input-group-border-only">
+          <ag-grid-angular #agProjects class="ag-theme-blue projects" [gridOptions]="gridOptions" [rowData]="rowData" [columnDefs]="columnDefs"
+            (rowClicked)="onRowClicked($event)">
+          </ag-grid-angular>
+        </div>
+
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+
+</div>

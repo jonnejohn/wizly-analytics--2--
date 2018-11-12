@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <span>Import Project</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <nb-card>
+        <nb-card-header>
+
+        </nb-card-header>
+        <nb-card-body>
+            <div class="form-group row clearfix">
+                <div class="col-md-12">
+                    <label class="control-label">Importing the Project..</label>
+
+                    <ngb-progressbar [value]="100" [striped]="true" [animated]="true"></ngb-progressbar>
+                </div>
+
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm float-right" (click)="closeModalToast()">
+        Continue import in background
+    </button>
+</div>
